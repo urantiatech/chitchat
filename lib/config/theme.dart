@@ -23,6 +23,7 @@ ThemeData lightTheme = ThemeData(
 
 ThemeData darkTheme = ThemeData(
   primaryColor: Color(0xFFEF6384),
+  primaryColorDark: Color(0xFFE9446A),
   primaryColorBrightness: Brightness.light,
   accentColor: Color(0xFF8CC9FF),
   accentColorBrightness: Brightness.light,

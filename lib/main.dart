@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ChitChat',
-      // theme: lightTheme,
+      theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
-      home: Placeholder(),
-      // home: Onboarding(),
+      // themeMode: ThemeMode.light,
+      home: Onboarding(),
       // home: isIntroShown == null ? Onboarding() : BottomBar(),
     );
   }
