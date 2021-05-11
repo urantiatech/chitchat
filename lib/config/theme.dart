@@ -1,4 +1,16 @@
+import 'package:chitchat/main.dart';
 import 'package:flutter/material.dart';
+
+bool isThemeDark = currentThemeMode == ThemeMode.dark;
+
+const Color whiteColor = Color(0xFFFFFFFF);
+
+Color normalTextColor =
+    isThemeDark == true ? Color(0xFFE0E0E0) : Color(0xFF1F2021);
+Color subtleTextColor =
+    isThemeDark == true ? Color(0xFFA0A0A0) : Color(0xFFB4B4B4);
+Color moreSubtleTextColor =
+    isThemeDark == true ? Color(0xFF6C6C6C) : Color(0xFFD5DFEA);
 
 ThemeData lightTheme = ThemeData(
   primaryColor: Color(0xFFE9446A),

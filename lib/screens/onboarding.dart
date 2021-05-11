@@ -1,3 +1,4 @@
+import 'package:chitchat/config/theme.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatelessWidget {
@@ -6,6 +7,7 @@ class Onboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isThemeDark ? null : Theme.of(context).primaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 28),
         child: Column(
@@ -22,13 +24,13 @@ class Onboarding extends StatelessWidget {
                   width: 201,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Color(0xFF292929),
+                    color: isThemeDark ? Color(0xFF292929) : Color(0xFFFFE4EA),
                   ),
                   child: Center(
                     child: Text(
                       'LOGO',
                       style: TextStyle(
-                        color: Theme.of(context).primaryColor,
+                        color: normalTextColor,
                         fontSize: 24,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Poppins',
@@ -41,7 +43,7 @@ class Onboarding extends StatelessWidget {
                   'Welcome to\nChitChat',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Color(0xFFE0E0E0),
+                    color: isThemeDark ? normalTextColor : whiteColor,
                     fontSize: 32,
                     fontWeight: FontWeight.w700,
                     fontFamily: 'Poppins',
@@ -52,7 +54,8 @@ class Onboarding extends StatelessWidget {
                   '“Connect with your friends and relatives\nwith the ChatApp messaging system”',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Color(0xFFE0E0E0),
+                    color: isThemeDark ? normalTextColor : whiteColor,
+                    height: 1.6,
                     fontSize: 14,
                     fontWeight: FontWeight.w300,
                     fontFamily: 'Poppins',
@@ -64,10 +67,11 @@ class Onboarding extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 100),
               child: ElevatedButton(
                 onPressed: () {},
-                // child: Text('Get Started'),
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(
-                    Theme.of(context).primaryColorDark,
+                    isThemeDark
+                        ? Theme.of(context).primaryColorDark
+                        : whiteColor,
                   ),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
@@ -79,11 +83,13 @@ class Onboarding extends StatelessWidget {
                   height: 56,
                   child: Center(
                     child: Text(
-                      'Get Started',
+                      'Get started',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: Colors.white,
+                        color: isThemeDark
+                            ? Colors.white
+                            : Theme.of(context).primaryColor,
                         fontFamily: 'Poppins',
                       ),
                     ),

@@ -6,6 +6,8 @@ import 'config/theme.dart';
 
 bool isIntroShown;
 SharedPreferences sharedPreferences;
+ThemeMode currentThemeMode = ThemeMode.dark;
+// ThemeMode currentThemeMode = ThemeMode.light;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,8 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'ChitChat',
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.dark,
-      // themeMode: ThemeMode.light,
+      themeMode: currentThemeMode,
       home: Onboarding(),
       // home: isIntroShown == null ? Onboarding() : BottomBar(),
     );
