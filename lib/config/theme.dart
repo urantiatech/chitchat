@@ -4,6 +4,18 @@ import 'package:flutter/material.dart';
 bool isThemeDark = currentThemeMode == ThemeMode.dark;
 
 const Color whiteColor = Color(0xFFFFFFFF);
+const Color lightThemePrimaryColor = Color(0xFFE9446A);
+const Color lightThemeAccentColor = Color(0xFF0272DD);
+const Color lightThemeDividerColor = Color(0xFFD1D9DF);
+const Color lightThemeErrorColor = Color(0xFFFFAB1C);
+const Color lightThemeHintColor = Color(0xFFD5DFEA);
+
+const Color darkThemePrimaryColor = Color(0xFFEF6384);
+const Color darkThemeAccentColor = Color(0xFF8CC9FF);
+const Color darkThemeBackgroundColor = Color(0xFF121212);
+const Color darkThemeDividerColor = Color(0xFF777777);
+const Color darkThemeErrorColor = Color(0xFFFFF69A);
+const Color darkThemeHintColor = Color(0xFF6C6C6C);
 
 Color normalTextColor =
     isThemeDark == true ? Color(0xFFE0E0E0) : Color(0xFF1F2021);
@@ -13,44 +25,57 @@ Color moreSubtleTextColor =
     isThemeDark == true ? Color(0xFF6C6C6C) : Color(0xFFD5DFEA);
 
 ThemeData lightTheme = ThemeData(
-  primaryColor: Color(0xFFE9446A),
+  primaryColor: lightThemePrimaryColor,
   primaryColorBrightness: Brightness.dark,
-  accentColor: Color(0xFF0272DD),
+  accentColor: lightThemeAccentColor,
   accentColorBrightness: Brightness.dark,
-  canvasColor: Color(0xFFFFFFFF),
-  scaffoldBackgroundColor: Color(0xFFFFFFFF),
-  // dividerColor: Color(0xFF777777),
+  canvasColor: whiteColor,
+  scaffoldBackgroundColor: whiteColor,
   dividerTheme: DividerThemeData(
     thickness: 0.5,
-    color: Color(0xFFD1D9DF),
+    color: lightThemeDividerColor,
   ),
-  errorColor: Color(0xFFFFAB1C),
-  hintColor: Color(0xFFD5DFEA),
+  errorColor: lightThemeErrorColor,
+  hintColor: lightThemeHintColor,
   brightness: Brightness.light,
   colorScheme: ColorScheme.light(),
   appBarTheme: AppBarTheme(
     elevation: 0.0,
+    backgroundColor: whiteColor,
+    iconTheme: IconThemeData(
+      color: lightThemePrimaryColor,
+    ),
+    actionsIconTheme: IconThemeData(
+      color: lightThemePrimaryColor,
+    ),
   ),
 );
 
 ThemeData darkTheme = ThemeData(
-  primaryColor: Color(0xFFEF6384),
-  primaryColorDark: Color(0xFFE9446A),
+  primaryColor: darkThemePrimaryColor,
+  primaryColorDark: lightThemePrimaryColor,
   primaryColorBrightness: Brightness.light,
-  accentColor: Color(0xFF8CC9FF),
+  accentColor: darkThemeAccentColor,
   accentColorBrightness: Brightness.light,
-  canvasColor: Color(0xFF121212),
-  scaffoldBackgroundColor: Color(0xFF121212),
-  // dividerColor: Color(0xFF777777),
+  canvasColor: darkThemeBackgroundColor,
+  scaffoldBackgroundColor: darkThemeBackgroundColor,
+  // dividerColor: darkThemeDividerColor,
   dividerTheme: DividerThemeData(
     thickness: 0.5,
-    color: Color(0xFF777777),
+    color: darkThemeDividerColor,
   ),
-  errorColor: Color(0xFFFFF69A),
-  hintColor: Color(0xFF6C6C6C),
+  errorColor: darkThemeErrorColor,
+  hintColor: darkThemeHintColor,
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(),
   appBarTheme: AppBarTheme(
     elevation: 0.0,
+    backgroundColor: darkThemeBackgroundColor,
+    iconTheme: IconThemeData(
+      color: darkThemePrimaryColor,
+    ),
+    actionsIconTheme: IconThemeData(
+      color: darkThemePrimaryColor,
+    ),
   ),
 );

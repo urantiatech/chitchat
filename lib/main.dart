@@ -6,14 +6,15 @@ import 'config/theme.dart';
 
 bool isIntroShown;
 SharedPreferences sharedPreferences;
-ThemeMode currentThemeMode = ThemeMode.dark;
-// ThemeMode currentThemeMode = ThemeMode.light;
+// ThemeMode currentThemeMode = ThemeMode.dark;
+ThemeMode currentThemeMode = ThemeMode.light;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  sharedPreferences = await SharedPreferences.getInstance();
-  isIntroShown = sharedPreferences.getBool("isIntroShown");
-  await sharedPreferences.setBool("isIntroShown", true);
+  await chitChatInit();
+  // sharedPreferences = await SharedPreferences.getInstance();
+  // isIntroShown = sharedPreferences.getBool("isIntroShown");
+  // await sharedPreferences.setBool("isIntroShown", true);
   runApp(MyApp());
 }
 
@@ -29,4 +30,10 @@ class MyApp extends StatelessWidget {
       // home: isIntroShown == null ? Onboarding() : BottomBar(),
     );
   }
+}
+
+chitChatInit() async {
+  sharedPreferences = await SharedPreferences.getInstance();
+  isIntroShown = sharedPreferences.getBool("isIntroShown");
+  await sharedPreferences.setBool("isIntroShown", true);
 }

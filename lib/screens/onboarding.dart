@@ -1,9 +1,9 @@
 import 'package:chitchat/config/theme.dart';
+import 'package:chitchat/screens/auth_screens/login_screen.dart';
+import 'package:chitchat/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatelessWidget {
-  const Onboarding({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,44 +65,19 @@ class Onboarding extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 100),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                    isThemeDark
-                        ? Theme.of(context).primaryColorDark
-                        : whiteColor,
-                  ),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+              child: PrimaryButton(
+                title: 'Get started',
+                onPressed: () {
+                  // using push instead of pushReplacement for testing purpose
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
                     ),
-                  ),
-                ),
-                child: Container(
-                  height: 56,
-                  child: Center(
-                    child: Text(
-                      'Get started',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: isThemeDark
-                            ? Colors.white
-                            : Theme.of(context).primaryColor,
-                        fontFamily: 'Poppins',
-                      ),
-                    ),
-                  ),
-                ),
+                  );
+                },
               ),
             ),
-            // SizedBox(
-            //   height: MediaQuery.of(context).size.height * 0.096,
-            //   child: Container(
-            //     color: Colors.green,
-            //   ),
-            // ),
           ],
         ),
       ),
