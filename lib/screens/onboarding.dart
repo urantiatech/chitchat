@@ -12,7 +12,6 @@ class Onboarding extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 28),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // mainAxisSize: MainAxisSize.min,
           children: [
             Column(
               children: [
@@ -33,7 +32,6 @@ class Onboarding extends StatelessWidget {
                         color: normalTextColor,
                         fontSize: 24,
                         fontWeight: FontWeight.w400,
-                        fontFamily: 'Poppins',
                       ),
                     ),
                   ),
@@ -46,7 +44,6 @@ class Onboarding extends StatelessWidget {
                     color: isThemeDark ? normalTextColor : whiteColor,
                     fontSize: 32,
                     fontWeight: FontWeight.w700,
-                    fontFamily: 'Poppins',
                   ),
                 ),
                 SizedBox(height: 32),
@@ -58,7 +55,6 @@ class Onboarding extends StatelessWidget {
                     height: 1.6,
                     fontSize: 14,
                     fontWeight: FontWeight.w300,
-                    fontFamily: 'Poppins',
                   ),
                 ),
               ],
@@ -69,7 +65,7 @@ class Onboarding extends StatelessWidget {
                 title: 'Get started',
                 onPressed: () {
                   // using push instead of pushReplacement for testing purpose
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) => LoginScreen(),
