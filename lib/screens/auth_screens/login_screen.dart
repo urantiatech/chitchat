@@ -1,3 +1,4 @@
+import 'package:chitchat/screens/auth_screens/registration_screen.dart';
 import 'package:chitchat/widgets/custom_text_button.dart';
 import 'package:chitchat/widgets/custom_textfield.dart';
 import 'package:chitchat/widgets/primary_button.dart';
@@ -5,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 
-double statusBarHeight;
-double appBarPreferredHeight;
-double fullHeight;
+// double statusBarHeight;
+// double appBarPreferredHeight;
+// double fullHeight;
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -17,9 +18,9 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    statusBarHeight = MediaQuery.of(context).padding.top;
-    appBarPreferredHeight = AppBar().preferredSize.height;
-    fullHeight = MediaQuery.of(context).size.height;
+    // statusBarHeight = MediaQuery.of(context).padding.top;
+    // appBarPreferredHeight = AppBar().preferredSize.height;
+    // fullHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -44,6 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
               onChanged: (String keyword) {
                 print(keyword);
               },
+              // autoFocus: true,
             ),
             SizedBox(height: 35),
             CustomTextField(
@@ -53,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 print(keyword);
               },
             ),
-            SizedBox(height: 35),
+            SizedBox(height: 6),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -106,7 +108,14 @@ class _LoginScreenState extends State<LoginScreen> {
             Center(
               child: CustomTextButton(
                 title: 'Don’t have an account? Sign up',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RegistrationScreen(),
+                    ),
+                  );
+                },
               ),
             ),
             SizedBox(height: 46),
