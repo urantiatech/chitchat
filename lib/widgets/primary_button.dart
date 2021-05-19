@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 class PrimaryButton extends StatelessWidget {
   final String title;
   final Function onPressed;
+  final bool needWhiteBg;
 
   const PrimaryButton({
     @required this.title,
     @required this.onPressed,
+    this.needWhiteBg = false,
   });
 
   @override
@@ -16,7 +18,11 @@ class PrimaryButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(
-          isThemeDark ? Theme.of(context).primaryColorDark : whiteColor,
+          isThemeDark
+              ? Theme.of(context).primaryColorDark
+              : needWhiteBg
+                  ? whiteColor
+                  : Theme.of(context).primaryColor,
         ),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
@@ -33,7 +39,7 @@ class PrimaryButton extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.w600,
               color:
-                  isThemeDark ? Colors.white : Theme.of(context).primaryColor,
+                  needWhiteBg ? Theme.of(context).primaryColor : Colors.white,
             ),
           ),
         ),

@@ -8,15 +8,7 @@ const Color lightThemePrimaryColor = Color(0xFFE9446A);
 const Color lightThemeAccentColor = Color(0xFF0272DD);
 const Color lightThemeDividerColor = Color(0xFFD1D9DF);
 const Color lightThemeErrorColor = Color(0xFFFFAB1C);
-// const Color lightThemeHintColor = Color(0xFFD5DFEA);
 const Color lightThemeHintColor = Color(0xFFA8B1BA);
-
-const Color darkThemePrimaryColor = Color(0xFFEF6384);
-const Color darkThemeAccentColor = Color(0xFF8CC9FF);
-const Color darkThemeBackgroundColor = Color(0xFF121212);
-const Color darkThemeDividerColor = Color(0xFF777777);
-const Color darkThemeErrorColor = Color(0xFFFFF69A);
-const Color darkThemeHintColor = Color(0xFF6C6C6C);
 
 Color normalTextColor =
     isThemeDark == true ? Color(0xFFE0E0E0) : Color(0xFF1F2021);
@@ -76,6 +68,13 @@ ThemeData lightTheme = ThemeData(
   ),
 );
 
+const Color darkThemePrimaryColor = Color(0xFFEF6384);
+const Color darkThemeAccentColor = Color(0xFF8CC9FF);
+const Color darkThemeBackgroundColor = Color(0xFF121212);
+const Color darkThemeDividerColor = Color(0xFF777777);
+const Color darkThemeErrorColor = Color(0xFFFFF69A);
+const Color darkThemeHintColor = Color(0xFF6C6C6C);
+
 ThemeData darkTheme = ThemeData(
   fontFamily: 'Poppins',
   primaryColor: darkThemePrimaryColor,
@@ -102,6 +101,29 @@ ThemeData darkTheme = ThemeData(
     ),
     actionsIconTheme: IconThemeData(
       color: darkThemePrimaryColor,
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    floatingLabelBehavior: FloatingLabelBehavior.always,
+    labelStyle: TextStyle(
+      height: 0,
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+      color: normalTextColor,
+    ),
+    hintStyle: TextStyle(
+      fontSize: 14,
+      fontWeight: FontWeight.w400,
+    ),
+    focusedBorder: UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: darkThemeHintColor,
+      ),
+    ),
+    enabledBorder: UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: darkThemeDividerColor,
+      ),
     ),
   ),
 );
