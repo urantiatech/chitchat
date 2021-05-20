@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sahillimbe.chitchat">
    <application
-        android:label="chitchat"
+        android:label="ChitChat"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

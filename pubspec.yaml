@@ -24,6 +24,9 @@ flutter:
   uses-material-design: true
 
   fonts:
+    - family: CcIcons
+      fonts:
+       - asset: assets/fonts/CcIcons.ttf
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Black.ttf

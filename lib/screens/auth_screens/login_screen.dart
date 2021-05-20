@@ -41,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontWeight: FontWeight.w600,
               ),
             ),
+
             SizedBox(height: 72),
             CustomTextField(
               labelText: 'Email Address',

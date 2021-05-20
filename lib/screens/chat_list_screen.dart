@@ -1,3 +1,4 @@
+import 'package:chitchat/config/cc_icons_icons.dart';
 import 'package:chitchat/config/theme.dart';
 import 'package:chitchat/widgets/custom_popup_menu_item.dart';
 import 'package:flutter/material.dart';
@@ -24,15 +25,21 @@ class _ChatListScreenState extends State<ChatListScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        // titleSpacing: 28,
         title: Text(
           'ChitChat',
           style: TextStyle(
             color: Theme.of(context).accentColor,
             fontSize: 20,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w700,
           ),
         ),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(CcIcons.search),
+            // icon: Icon(Icons.search_rounded),
+            onPressed: () {},
+          ),
           PopupMenuButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
