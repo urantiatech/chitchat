@@ -1,4 +1,5 @@
 import 'package:chitchat/screens/auth_screens/registration_screen.dart';
+import 'package:chitchat/screens/auth_screens/reset_password_screen.dart';
 import 'package:chitchat/widgets/custom_text_button.dart';
 import 'package:chitchat/widgets/custom_textfield.dart';
 import 'package:chitchat/widgets/primary_button.dart';
@@ -61,7 +62,14 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 CustomTextButton(
                   title: 'Forgot Password?',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ResetPasswordScreen(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
