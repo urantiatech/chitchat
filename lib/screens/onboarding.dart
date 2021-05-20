@@ -61,7 +61,7 @@ class Onboarding extends StatelessWidget {
               needWhiteBg: isThemeDark ? false : true,
               onPressed: () {
                 // using push instead of pushReplacement for testing purpose
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => LoginScreen(),

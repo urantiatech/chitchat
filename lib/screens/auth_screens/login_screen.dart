@@ -1,5 +1,6 @@
 import 'package:chitchat/screens/auth_screens/registration_screen.dart';
 import 'package:chitchat/screens/auth_screens/reset_password_screen.dart';
+import 'package:chitchat/screens/chat_list_screen.dart';
 import 'package:chitchat/widgets/custom_text_button.dart';
 import 'package:chitchat/widgets/custom_textfield.dart';
 import 'package:chitchat/widgets/primary_button.dart';
@@ -110,7 +111,14 @@ class _LoginScreenState extends State<LoginScreen> {
             // SizedBox(height: fullHeight * 0.2),
             PrimaryButton(
               title: 'Sign In',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatListScreen(),
+                  ),
+                );
+              },
             ),
             SizedBox(height: 6),
             Center(
