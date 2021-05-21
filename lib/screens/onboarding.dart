@@ -1,6 +1,5 @@
 import 'package:chitchat/config/theme.dart';
 import 'package:chitchat/screens/auth_screens/login_screen.dart';
-import 'package:chitchat/widgets/custom_text_button.dart';
 import 'package:chitchat/widgets/primary_button.dart';
 import 'package:flutter/material.dart';
 
@@ -13,9 +12,7 @@ class Onboarding extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 28),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.173,
-            ),
+            Spacer(flex: 6),
             Container(
               height: 201,
               width: 201,
@@ -55,7 +52,9 @@ class Onboarding extends StatelessWidget {
                 fontWeight: FontWeight.w300,
               ),
             ),
-            Spacer(),
+            Spacer(
+              flex: 5,
+            ),
             PrimaryButton(
               title: 'Get started',
               needWhiteBg: isThemeDark ? false : true,
@@ -69,7 +68,9 @@ class Onboarding extends StatelessWidget {
                 );
               },
             ),
-            SizedBox(height: 100),
+            Spacer(
+              flex: 5,
+            ),
           ],
         ),
       ),

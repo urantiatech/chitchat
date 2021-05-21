@@ -25,7 +25,6 @@ class _ChatListScreenState extends State<ChatListScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        // titleSpacing: 28,
         title: Text(
           'ChitChat',
           style: TextStyle(

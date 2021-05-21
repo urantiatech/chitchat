@@ -10,7 +10,7 @@ import 'package:flutter/widgets.dart';
 
 // double statusBarHeight;
 // double appBarPreferredHeight;
-// double fullHeight;
+double fullHeight;
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -25,118 +25,91 @@ class _LoginScreenState extends State<LoginScreen> {
     // fullHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 28),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Sign In',
-              style: TextStyle(
-                color: Theme.of(context).accentColor,
-                fontSize: 36,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-
-            SizedBox(height: 72),
-            CustomTextField(
-              labelText: 'Email Address',
-              onChanged: (String keyword) {
-                print(keyword);
-              },
-              // autoFocus: true,
-            ),
-            SizedBox(height: 35),
-            CustomTextField(
-              labelText: 'Password',
-              obscureText: true,
-              onChanged: (String keyword) {
-                print(keyword);
-              },
-            ),
-            SizedBox(height: 6),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+      // resizeToAvoidBottomInset: false,
+      // appBar: AppBar(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            // padding: const EdgeInsets.symmetric(horizontal: 28),
+            padding: const EdgeInsets.only(left: 28, right: 28, top: 56),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomTextButton(
-                  title: 'Forgot Password?',
+                Text(
+                  'Sign In',
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                    fontSize: 36,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(height: 72),
+                CustomTextField(
+                  labelText: 'Email Address',
+                  onChanged: (String keyword) {
+                    print(keyword);
+                  },
+                  // autoFocus: true,
+                ),
+                SizedBox(height: 35),
+                CustomTextField(
+                  labelText: 'Password',
+                  obscureText: true,
+                  onChanged: (String keyword) {
+                    print(keyword);
+                  },
+                ),
+                SizedBox(height: 6),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    CustomTextButton(
+                      title: 'Forgot Password?',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ResetPasswordScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 35),
+                // Spacer(),
+                // SizedBox(height: fullHeight * 0.2),
+                PrimaryButton(
+                  title: 'Sign In',
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ResetPasswordScreen(),
+                        builder: (context) => ChatListScreen(),
                       ),
                     );
                   },
                 ),
+                SizedBox(height: 6),
+                Center(
+                  child: CustomTextButton(
+                    title: 'Don’t have an account? Sign up',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegistrationScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(height: 10),
               ],
             ),
-            // Flexible(
-            //   flex: 1,
-            //   fit: FlexFit.tight,
-            //   child: Container(
-            //     color: Colors.red[100],
-            //     // height: 150,
-            //   ),
-            // ),
-            // Flexible(
-            //   flex: 3,
-            //   child: Container(
-            //     color: Colors.yellow[100],
-            //     child: Column(
-            //       children: [
-            //         SizedBox(height: 35),
-            //         // Spacer(),
-            //         PrimaryButton(
-            //           title: 'Sign In',
-            //           onPressed: () {},
-            //         ),
-            //         SizedBox(height: 6),
-            //         Center(
-            //           child: CustomTextButton(
-            //             title: 'Don’t have an account? Sign up',
-            //             onPressed: () {},
-            //           ),
-            //         ),
-            //         // SizedBox(height: 46),
-            //       ],
-            //     ),
-            //   ),
-            // ),
-            SizedBox(height: 35),
-            Spacer(),
-            // SizedBox(height: fullHeight * 0.2),
-            PrimaryButton(
-              title: 'Sign In',
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChatListScreen(),
-                  ),
-                );
-              },
-            ),
-            SizedBox(height: 6),
-            Center(
-              child: CustomTextButton(
-                title: 'Don’t have an account? Sign up',
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => RegistrationScreen(),
-                    ),
-                  );
-                },
-              ),
-            ),
-            SizedBox(height: 46),
-          ],
+          ),
         ),
       ),
     );

@@ -12,76 +12,83 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
+    fullHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 28),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Sign Up',
-              style: TextStyle(
-                color: Theme.of(context).accentColor,
-                fontSize: 36,
-                fontWeight: FontWeight.w600,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 28),
+          // padding: const EdgeInsets.only(left: 28, right: 28, top: 56),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Sign Up',
+                style: TextStyle(
+                  color: Theme.of(context).accentColor,
+                  fontSize: 36,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            SizedBox(height: 72),
-            CustomTextField(
-              labelText: 'Name',
-              onChanged: (String keyword) {
-                print(keyword);
-              },
-              // autoFocus: true,
-            ),
-            SizedBox(height: 35),
-            CustomTextField(
-              labelText: 'Email Address',
-              onChanged: (String keyword) {
-                print(keyword);
-              },
-            ),
-            SizedBox(height: 35),
-            CustomTextField(
-              labelText: 'Password',
-              obscureText: true,
-              onChanged: (String keyword) {
-                print(keyword);
-              },
-            ),
-            SizedBox(height: 35),
-            CustomTextField(
-              labelText: 'Confirm Password',
-              obscureText: true,
-              onChanged: (String keyword) {
-                print(keyword);
-              },
-            ),
-            SizedBox(height: 35),
-            Spacer(),
-            PrimaryButton(
-              title: 'Sign Up',
-              onPressed: () {},
-            ),
-            SizedBox(height: 6),
-            Center(
-              child: CustomTextButton(
-                title: 'Already have an account? Sign in',
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
-                    ),
-                  );
+              SizedBox(height: fullHeight > 690 ? 72 : 35),
+              // SizedBox(height: 72),
+              CustomTextField(
+                labelText: 'Name',
+                onChanged: (String keyword) {
+                  print(keyword);
+                },
+                // autoFocus: true,
+              ),
+              SizedBox(height: 35),
+              CustomTextField(
+                labelText: 'Email Address',
+                onChanged: (String keyword) {
+                  print(keyword);
                 },
               ),
-            ),
-            SizedBox(height: 46),
-          ],
+              SizedBox(height: 35),
+              CustomTextField(
+                labelText: 'Password',
+                obscureText: true,
+                onChanged: (String keyword) {
+                  print(keyword);
+                },
+              ),
+              SizedBox(height: 35),
+              CustomTextField(
+                labelText: 'Confirm Password',
+                obscureText: true,
+                onChanged: (String keyword) {
+                  print(keyword);
+                },
+              ),
+              SizedBox(height: 44),
+              // Spacer(),
+              PrimaryButton(
+                title: 'Sign Up',
+                onPressed: () {},
+              ),
+              SizedBox(height: 6),
+              Center(
+                child: CustomTextButton(
+                  title: 'Already have an account? Sign in',
+                  onPressed: () {
+                    Navigator.pop(context);
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => LoginScreen(),
+                    //   ),
+                    // );
+                  },
+                ),
+              ),
+              SizedBox(height: 10),
+            ],
+          ),
         ),
       ),
     );
