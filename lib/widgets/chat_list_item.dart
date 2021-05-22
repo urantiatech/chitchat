@@ -20,11 +20,13 @@ class ChatListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {},
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          EdgeInsets.symmetric(horizontal: 0),
-        ),
-      ),
+      // style: ButtonStyle(
+      //   overlayColor: MaterialStateProperty.all(
+      //       Theme.of(context).accentColor.withOpacity(0.12)),
+      //   padding: MaterialStateProperty.all(
+      //     EdgeInsets.symmetric(horizontal: 0),
+      //   ),
+      // ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: 16,

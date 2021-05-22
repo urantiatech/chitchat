@@ -41,6 +41,16 @@ ThemeData lightTheme = ThemeData(
   hintColor: lightThemeHintColor,
   brightness: Brightness.light,
   colorScheme: ColorScheme.light(),
+  textButtonTheme: TextButtonThemeData(
+    style: ButtonStyle(
+      overlayColor: MaterialStateProperty.all(
+        lightThemeAccentColor.withOpacity(0.12),
+      ),
+      padding: MaterialStateProperty.all(
+        EdgeInsets.symmetric(horizontal: 0),
+      ),
+    ),
+  ),
   appBarTheme: AppBarTheme(
     elevation: 0.0,
     backgroundColor: whiteColor,
@@ -94,6 +104,16 @@ ThemeData darkTheme = ThemeData(
   hintColor: darkThemeHintColor,
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(),
+  textButtonTheme: TextButtonThemeData(
+    style: ButtonStyle(
+      overlayColor: MaterialStateProperty.all(
+        darkThemeAccentColor.withOpacity(0.12),
+      ),
+      padding: MaterialStateProperty.all(
+        EdgeInsets.symmetric(horizontal: 0),
+      ),
+    ),
+  ),
   appBarTheme: AppBarTheme(
     elevation: 0.0,
     backgroundColor: darkThemeBackgroundColor,
