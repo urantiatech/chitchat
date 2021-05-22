@@ -21,7 +21,7 @@ class PrimaryButton extends StatelessWidget {
           isThemeDark
               ? Theme.of(context).primaryColorDark
               : needWhiteBg
-                  ? Color(0xE6FFFFFF)
+                  ? Color(0xF2FFFFFF)
                   : Theme.of(context).primaryColor,
         ),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(

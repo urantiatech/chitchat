@@ -10,6 +10,13 @@ const Color lightThemeDividerColor = Color(0xFFD1D9DF);
 const Color lightThemeErrorColor = Color(0xFFFFAB1C);
 const Color lightThemeHintColor = Color(0xFFA8B1BA);
 
+const Color darkThemePrimaryColor = Color(0xFFEF6384);
+const Color darkThemeAccentColor = Color(0xFF8CC9FF);
+const Color darkThemeBackgroundColor = Color(0xFF121212);
+const Color darkThemeDividerColor = Color(0xFF777777);
+const Color darkThemeErrorColor = Color(0xFFFFF69A);
+const Color darkThemeHintColor = Color(0xFF6C6C6C);
+
 Color normalTextColor =
     isThemeDark == true ? Color(0xFFE0E0E0) : Color(0xFF1F2021);
 Color subtleTextColor =
@@ -20,6 +27,7 @@ Color moreSubtleTextColor =
 ThemeData lightTheme = ThemeData(
   fontFamily: 'Poppins',
   primaryColor: lightThemePrimaryColor,
+  primaryColorDark: lightThemePrimaryColor,
   primaryColorBrightness: Brightness.dark,
   accentColor: lightThemeAccentColor,
   accentColorBrightness: Brightness.dark,
@@ -67,13 +75,6 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
 );
-
-const Color darkThemePrimaryColor = Color(0xFFEF6384);
-const Color darkThemeAccentColor = Color(0xFF8CC9FF);
-const Color darkThemeBackgroundColor = Color(0xFF121212);
-const Color darkThemeDividerColor = Color(0xFF777777);
-const Color darkThemeErrorColor = Color(0xFFFFF69A);
-const Color darkThemeHintColor = Color(0xFF6C6C6C);
 
 ThemeData darkTheme = ThemeData(
   fontFamily: 'Poppins',

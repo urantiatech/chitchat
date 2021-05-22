@@ -1,5 +1,7 @@
 import 'package:chitchat/config/cc_icons_icons.dart';
 import 'package:chitchat/config/theme.dart';
+import 'package:chitchat/models/chat_list_item_model.dart';
+import 'package:chitchat/widgets/chat_list_item.dart';
 import 'package:chitchat/widgets/custom_popup_menu_item.dart';
 import 'package:flutter/material.dart';
 
@@ -66,6 +68,23 @@ class _ChatListScreenState extends State<ChatListScreen> {
             },
           ),
         ],
+      ),
+      body: ListView.separated(
+        separatorBuilder: (context, index) => Divider(
+          height: 1,
+          indent: 28,
+          endIndent: 28,
+        ),
+        itemCount: listOfChat.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ChatListItem(
+            imgPath: listOfChat[index].imgPath,
+            senderName: listOfChat[index].senderName,
+            lastMessage: listOfChat[index].lastMessage,
+            lmTime: listOfChat[index].lmTime,
+            noOfUnread: listOfChat[index].noOfUnread,
+          );
+        },
       ),
     );
   }
