@@ -6,14 +6,16 @@ bool isThemeDark = currentThemeMode == ThemeMode.dark;
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color lightThemePrimaryColor = Color(0xFFE9446A);
 const Color lightThemeAccentColor = Color(0xFF0272DD);
-const Color lightThemeDividerColor = Color(0xFFD1D9DF);
+const Color lightThemeDividerColor = Color(0xFFE5EAEE);
+const Color lightThemeInputBorderColor = Color(0xFFD1D9DF);
 const Color lightThemeErrorColor = Color(0xFFFFAB1C);
 const Color lightThemeHintColor = Color(0xFFA8B1BA);
 
 const Color darkThemePrimaryColor = Color(0xFFEF6384);
 const Color darkThemeAccentColor = Color(0xFF8CC9FF);
 const Color darkThemeBackgroundColor = Color(0xFF121212);
-const Color darkThemeDividerColor = Color(0xFF777777);
+const Color darkThemeDividerColor = Color(0xFF474747);
+const Color darkThemeInputBorderColor = Color(0xFF777777);
 const Color darkThemeErrorColor = Color(0xFFFFF69A);
 const Color darkThemeHintColor = Color(0xFF6C6C6C);
 
@@ -72,6 +74,7 @@ ThemeData lightTheme = ThemeData(
     hintStyle: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: moreSubtleTextColor,
     ),
     focusedBorder: UnderlineInputBorder(
       borderSide: BorderSide(
@@ -80,7 +83,7 @@ ThemeData lightTheme = ThemeData(
     ),
     enabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
-        color: lightThemeDividerColor,
+        color: lightThemeInputBorderColor,
       ),
     ),
   ),
@@ -135,6 +138,7 @@ ThemeData darkTheme = ThemeData(
     hintStyle: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w400,
+      color: moreSubtleTextColor,
     ),
     focusedBorder: UnderlineInputBorder(
       borderSide: BorderSide(
@@ -143,7 +147,7 @@ ThemeData darkTheme = ThemeData(
     ),
     enabledBorder: UnderlineInputBorder(
       borderSide: BorderSide(
-        color: darkThemeDividerColor,
+        color: darkThemeInputBorderColor,
       ),
     ),
   ),

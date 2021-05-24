@@ -1,6 +1,7 @@
 import 'package:chitchat/config/cc_icons_icons.dart';
 import 'package:chitchat/config/theme.dart';
 import 'package:chitchat/models/chat_list_item_model.dart';
+import 'package:chitchat/screens/search_chat_list_screen.dart';
 import 'package:chitchat/widgets/chat_list_item.dart';
 import 'package:chitchat/widgets/custom_popup_menu_item.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,6 @@ class _ChatListScreenState extends State<ChatListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(
           'ChitChat',
@@ -38,8 +38,14 @@ class _ChatListScreenState extends State<ChatListScreen> {
         actions: <Widget>[
           IconButton(
             icon: Icon(CcIcons.search),
-            // icon: Icon(Icons.search_rounded),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SearchChatListScreen(),
+                ),
+              );
+            },
           ),
           PopupMenuButton(
             shape: RoundedRectangleBorder(

@@ -25,12 +25,9 @@ class _LoginScreenState extends State<LoginScreen> {
     // fullHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
-      // appBar: AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            // padding: const EdgeInsets.symmetric(horizontal: 28),
             padding: const EdgeInsets.only(left: 28, right: 28, top: 56),
             child: Column(
               mainAxisSize: MainAxisSize.min,
