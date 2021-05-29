@@ -1,4 +1,3 @@
-import 'package:chitchat/config/theme.dart';
 import 'package:chitchat/models/chat_list_item_model.dart';
 import 'package:chitchat/widgets/chat_list_item.dart';
 import 'package:chitchat/widgets/search_textfield.dart';

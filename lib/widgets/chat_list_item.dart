@@ -1,4 +1,5 @@
 import 'package:chitchat/config/theme.dart';
+import 'package:chitchat/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 class ChatListItem extends StatelessWidget {
@@ -19,7 +20,14 @@ class ChatListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChatScreen(senderName: senderName),
+          ),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: 16,
