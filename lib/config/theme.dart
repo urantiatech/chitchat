@@ -2,6 +2,7 @@ import 'package:chitchat/main.dart';
 import 'package:flutter/material.dart';
 
 bool isThemeDark = currentThemeMode == ThemeMode.dark;
+double splashRadius = 24;
 
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color lightThemePrimaryColor = Color(0xFFE9446A);
@@ -25,6 +26,7 @@ Color subtleTextColor =
     isThemeDark == true ? Color(0xFFA0A0A0) : Color(0xFFB4B4B4);
 Color moreSubtleTextColor =
     isThemeDark == true ? Color(0xFF6C6C6C) : Color(0xFFD5DFEA);
+Color chatFieldBg = isThemeDark == true ? Color(0xFF292929) : Color(0xFFF9F9F9);
 
 ThemeData lightTheme = ThemeData(
   fontFamily: 'Poppins',

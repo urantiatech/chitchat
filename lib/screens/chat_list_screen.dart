@@ -37,6 +37,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         ),
         actions: <Widget>[
           IconButton(
+            splashRadius: splashRadius,
             icon: Icon(CcIcons.search),
             onPressed: () {
               Navigator.push(
@@ -54,6 +55,13 @@ class _ChatListScreenState extends State<ChatListScreen> {
               ),
             ),
             onSelected: onTapMenu,
+            child: IconButton(
+              splashRadius: splashRadius,
+              onPressed: () {},
+              icon: Icon(
+                Icons.more_vert_rounded,
+              ),
+            ),
             itemBuilder: (BuildContext context) {
               final String newGroup = 'New Group';
               final String settings = 'Settings';
