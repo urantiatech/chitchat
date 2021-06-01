@@ -4,8 +4,6 @@ import 'package:chitchat/widgets/search_textfield.dart';
 import 'package:flutter/material.dart';
 
 class SearchChatListScreen extends StatefulWidget {
-  const SearchChatListScreen({Key key}) : super(key: key);
-
   @override
   _SearchChatListScreenState createState() => _SearchChatListScreenState();
 }
