@@ -66,7 +66,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             SizedBox(height: 28),
             SettingsProfileField(
               leadIconData: CcIcons.email,
-              fieldTitle: 'Email',
+              fieldTitle: 'Email Address',
               fieldData: 'MattieBlooman@yahoo.com',
             ),
             SizedBox(height: 24),
@@ -105,7 +105,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               fieldTitle: 'Rate us',
               onPressed: () {},
             ),
-            SizedBox(height: 28),
+            SizedBox(height: 10),
             TextButton(
               onPressed: () {},
               child: Container(
@@ -113,7 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: EdgeInsets.symmetric(vertical: 16),
                 child: Center(
                   child: Text(
-                    'Sign Out',
+                    'Sign out',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

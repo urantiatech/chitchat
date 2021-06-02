@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // Spacer(),
                 // SizedBox(height: fullHeight * 0.2),
                 PrimaryButton(
-                  title: 'Sign In',
+                  title: 'Sign in',
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,

@@ -66,7 +66,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               SizedBox(height: 44),
               // Spacer(),
               PrimaryButton(
-                title: 'Sign Up',
+                title: 'Sign up',
                 onPressed: () {},
               ),
               SizedBox(height: 6),
