@@ -18,7 +18,8 @@ class Onboarding extends StatelessWidget {
               width: 201,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: isThemeDark ? Color(0xFF292929) : Color(0xFFFFE4EA),
+                color: chatFieldBg,
+                // color: isThemeDark ? Color(0xFF292929) : Color(0xFFFFE4EA),
               ),
               child: Center(
                 child: Text(

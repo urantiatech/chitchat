@@ -12,13 +12,27 @@ ThemeMode currentThemeMode = ThemeMode.light;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await chitChatInit();
-  // sharedPreferences = await SharedPreferences.getInstance();
-  // isIntroShown = sharedPreferences.getBool("isIntroShown");
-  // await sharedPreferences.setBool("isIntroShown", true);
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+Function globalSetState;
+
+class _MyAppState extends State<MyApp> {
+  void updateState() {
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    globalSetState = updateState;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +41,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       themeMode: currentThemeMode,
       home: Onboarding(),
-      // home: isIntroShown == null ? Onboarding() : BottomBar(),
+      // home: isIntroShown == null ? Onboarding() : ChatListScreen(),
     );
   }
 }

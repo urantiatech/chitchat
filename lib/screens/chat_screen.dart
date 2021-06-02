@@ -32,7 +32,6 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         actions: <Widget>[
           IconButton(
-            splashRadius: splashRadius,
             icon: Icon(CcIcons.search),
             onPressed: () {
               Navigator.push(
@@ -141,6 +140,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ),
                 IconButton(
+                  tooltip: 'Send',
                   splashRadius: splashRadius,
                   icon: RotatedBox(
                     quarterTurns: 1,

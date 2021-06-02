@@ -20,6 +20,14 @@ const Color darkThemeInputBorderColor = Color(0xFF777777);
 const Color darkThemeErrorColor = Color(0xFFFFF69A);
 const Color darkThemeHintColor = Color(0xFF6C6C6C);
 
+void updateTextColors() {
+  normalTextColor = isThemeDark == true ? Color(0xFFE0E0E0) : Color(0xFF1F2021);
+  subtleTextColor = isThemeDark == true ? Color(0xFFA0A0A0) : Color(0xFFB4B4B4);
+  moreSubtleTextColor =
+      isThemeDark == true ? Color(0xFF6C6C6C) : Color(0xFFD5DFEA);
+  chatFieldBg = isThemeDark == true ? Color(0xFF292929) : Color(0xFFF9F9F9);
+}
+
 Color normalTextColor =
     isThemeDark == true ? Color(0xFFE0E0E0) : Color(0xFF1F2021);
 Color subtleTextColor =
